@@ -1,0 +1,9 @@
+{
+  "name": "redis-sink-connector",
+  "config": {
+    "connector.class": "au.seek.redis.RedisSinkConnector",
+    "tasks.max": "1",
+    "topics": "my-topic",
+    "redis.host": "redis"
+  }
+}
