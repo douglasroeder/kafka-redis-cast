@@ -53,4 +53,5 @@ cat get_jobs_for_candidates.lua | redis-cli -x FUNCTION LOAD REPLACE
 
 # Call Redis function passing arguments
 redis-cli FCALL get_jobs_for_candidate 1 "" 123 impression
+=> "{\"candidateId\":\"123\",\"event\":\"impression\",\"jobIds\":[\"321\",\"322\",\"323\"]}"
 ```
