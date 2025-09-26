@@ -12,6 +12,12 @@ docker-compose up -d
 # Follow Kakfa logs for debugging
 docker-compose logs -f kafka-connect
 
+# Create my-topic for testing purposes
+docker exec -it kafka-redis-cast-kafka-1 kafka-topics --create \
+  --bootstrap-server kafka:29092 \
+  --replication-factor 1 --partitions 1 \
+  --topic my-topic
+
 # Create required connect topics for docker-compose setup
 docker exec -it kafka-redis-cast-kafka-1 kafka-topics \
   --create \
