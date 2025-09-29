@@ -12,11 +12,6 @@ docker-compose up -d
 # Follow Kakfa logs for debugging
 docker-compose logs -f kafka-connect
 
-# Register Custom Kafka Connect plugin
-curl -X PUT http://localhost:8083/connectors \
-     -H "Content-Type: application/json" \
-     -d @redis-sink-config.json
-
 # Create my-topic for testing purposes
 docker exec -it kafka-redis-cast-kafka-1 kafka-topics --create \
   --bootstrap-server kafka:29092 \
@@ -47,6 +42,14 @@ docker exec -it kafka-redis-cast-kafka-1 kafka-topics \
   --partitions 1 \
   --topic connect-status \
   --config cleanup.policy=compact
+
+# Register Custom Kafka Connect plugin
+curl -X POST http://localhost:8083/connectors \
+     -H "Content-Type: application/json" \
+     -d @redis-sink-config.json
+
+# Restart Kafka
+docker-compose restart kafka-connect
 
 # Push message to Kafka topic
 echo '{"candidateId": 593, "jobId": 323, "event": "impression"}' | \
