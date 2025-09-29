@@ -1,4 +1,4 @@
-package au.seek.redis;
+package au.mandrakez.redis;
 
 import org.apache.kafka.common.config.AbstractConfig;
 import org.apache.kafka.common.config.ConfigDef;

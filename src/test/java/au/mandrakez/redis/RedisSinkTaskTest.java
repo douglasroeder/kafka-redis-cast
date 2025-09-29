@@ -1,4 +1,4 @@
-package au.seek.redis;
+package au.mandrakez.redis;
 
 import org.apache.kafka.connect.sink.SinkRecord;
 import org.junit.jupiter.api.BeforeEach;

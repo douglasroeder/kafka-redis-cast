@@ -1,4 +1,4 @@
-package au.seek.redis;
+package au.mandrakez.redis;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package au.seek.redis;
+package au.mandrakez.redis;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Transaction;
